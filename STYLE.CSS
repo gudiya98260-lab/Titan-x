@@ -1,0 +1,481 @@
+/* =========================================
+   TITAN-X v0.1 Alpha
+   STYLE.CSS - PART 1
+   ========================================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#050505;
+    color:#00ffe7;
+    font-family:'Orbitron',sans-serif;
+    overflow:hidden;
+    height:100vh;
+}
+
+/* MATRIX BACKGROUND */
+
+#matrix{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    z-index:-5;
+    background:#000;
+}
+
+/* DASHBOARD */
+
+.dashboard{
+    position:relative;
+    width:100%;
+    height:100vh;
+    padding:25px;
+}
+
+/* TOP BAR */
+
+.topbar{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:18px 28px;
+
+    background:rgba(0,255,255,.05);
+
+    backdrop-filter:blur(12px);
+
+    border:1px solid rgba(0,255,255,.18);
+
+    box-shadow:
+    0 0 20px rgba(0,255,255,.15);
+
+    border-radius:18px;
+}
+
+/* LOGO */
+
+.logo{
+
+    font-size:34px;
+
+    font-weight:900;
+
+    color:#00ffff;
+
+    letter-spacing:6px;
+
+    text-shadow:
+
+    0 0 8px cyan,
+
+    0 0 25px cyan,
+
+    0 0 45px cyan;
+}
+
+/* STATUS */
+
+.status{
+
+    color:#00ff66;
+
+    font-size:15px;
+
+    font-weight:bold;
+
+    letter-spacing:2px;
+}
+
+/* AI CORE */
+
+.core-section{
+
+    position:absolute;
+
+    left:50%;
+
+    top:45%;
+
+    transform:translate(-50%,-50%);
+
+    width:280px;
+
+    height:280px;
+}
+
+/* ENERGY RINGS */
+
+.ring{
+
+    position:absolute;
+
+    inset:0;
+
+    border-radius:50%;
+
+    border:2px solid cyan;
+
+    box-shadow:
+
+    0 0 15px cyan,
+
+    inset 0 0 15px cyan;
+}
+
+.ring1{
+
+    animation:spin1 10s linear infinite;
+}
+
+.ring2{
+
+    transform:scale(.82);
+
+    animation:spin2 7s linear infinite reverse;
+}
+
+.ring3{
+
+    transform:scale(.62);
+
+    animation:spin1 5s linear infinite;
+}
+
+/* AI CORE */
+
+.core{
+
+    position:absolute;
+
+    left:50%;
+
+    top:50%;
+
+    transform:translate(-50%,-50%);
+
+    width:120px;
+
+    height:120px;
+
+    border-radius:50%;
+
+    background:radial-gradient(circle,#00ffff,#003d3d);
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-size:28px;
+
+    font-weight:bold;
+
+    color:white;
+
+    box-shadow:
+
+    0 0 25px cyan,
+
+    0 0 60px cyan;
+}
+
+/* ANIMATIONS */
+
+@keyframes spin1{
+
+    from{
+
+        transform:rotate(0deg);
+
+    }
+
+    to{
+
+        transform:rotate(360deg);
+
+    }
+}
+
+@keyframes spin2{
+
+    from{
+
+        transform:scale(.82) rotate(360deg);
+
+    }
+
+    to{
+
+        transform:scale(.82) rotate(0deg);
+
+    }
+}
+/* =========================================
+   TITAN-X v0.1 Alpha
+   STYLE.CSS - PART 2
+   ========================================= */
+
+/* LEFT & RIGHT PANELS */
+
+.left-panel,
+.right-panel{
+    position:absolute;
+    top:110px;
+    display:flex;
+    flex-direction:column;
+    gap:18px;
+}
+
+.left-panel{
+    left:25px;
+}
+
+.right-panel{
+    right:25px;
+}
+
+/* GLASS CARDS */
+
+.card{
+    width:220px;
+    padding:16px;
+
+    background:rgba(0,255,255,.05);
+
+    border:1px solid rgba(0,255,255,.18);
+
+    border-radius:15px;
+
+    backdrop-filter:blur(12px);
+
+    color:#00ffff;
+
+    box-shadow:0 0 18px rgba(0,255,255,.15);
+
+    transition:.35s;
+}
+
+.card:hover{
+
+    transform:translateY(-5px) scale(1.03);
+
+    box-shadow:
+    0 0 20px cyan,
+    0 0 40px cyan;
+}
+
+/* TERMINAL */
+
+.terminal{
+
+    position:absolute;
+
+    left:50%;
+
+    bottom:35px;
+
+    transform:translateX(-50%);
+
+    width:80%;
+
+    min-height:140px;
+
+    background:rgba(0,0,0,.55);
+
+    border:1px solid #00ff66;
+
+    border-radius:15px;
+
+    padding:18px;
+
+    color:#00ff66;
+
+    font-family:monospace;
+
+    overflow:hidden;
+
+    box-shadow:
+    0 0 20px rgba(0,255,100,.25);
+}
+
+/* VOICE PANEL */
+
+.voice-panel{
+
+    position:absolute;
+
+    bottom:210px;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+    display:flex;
+
+    align-items:center;
+
+    gap:14px;
+
+    padding:15px 24px;
+
+    background:rgba(0,255,255,.05);
+
+    border:1px solid rgba(0,255,255,.2);
+
+    border-radius:40px;
+
+    backdrop-filter:blur(12px);
+
+    box-shadow:
+    0 0 18px rgba(0,255,255,.18);
+}
+
+.mic{
+
+    width:18px;
+
+    height:18px;
+
+    border-radius:50%;
+
+    background:#00ffff;
+
+    box-shadow:
+    0 0 12px cyan,
+    0 0 28px cyan;
+
+    animation:pulse 1.5s infinite;
+}
+
+@keyframes pulse{
+
+    0%{
+        transform:scale(1);
+    }
+
+    50%{
+        transform:scale(1.4);
+    }
+
+    100%{
+        transform:scale(1);
+    }
+}
+
+/* FOOTER */
+
+footer{
+
+    position:absolute;
+
+    bottom:8px;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+    color:#00ffff;
+
+    font-size:12px;
+
+    letter-spacing:2px;
+
+    opacity:.8;
+}
+/* =========================================
+   TITAN-X v0.1 Alpha
+   STYLE.CSS - PART 3
+   ========================================= */
+
+/* BOOT SCREEN */
+
+#boot-screen{
+    position:fixed;
+    inset:0;
+    background:#000;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    z-index:9999;
+    color:#00ffff;
+    animation:bootFade 4s forwards;
+}
+
+#boot-screen h1{
+    font-size:60px;
+    letter-spacing:10px;
+    text-shadow:
+        0 0 15px cyan,
+        0 0 40px cyan;
+}
+
+#boot-screen p{
+    margin-top:20px;
+    color:#00ff66;
+    font-size:18px;
+}
+
+/* SCANLINE */
+
+.scanline{
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+    z-index:50;
+    opacity:.08;
+    background:repeating-linear-gradient(
+        to bottom,
+        transparent 0px,
+        transparent 3px,
+        rgba(0,255,255,.12) 4px
+    );
+    animation:scanMove 8s linear infinite;
+}
+
+/* CYBER GRID */
+
+body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    background:
+        linear-gradient(rgba(0,255,255,.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0,255,255,.05) 1px, transparent 1px);
+    background-size:40px 40px;
+    z-index:-4;
+}
+
+/* RED ALERT MODE */
+
+body.alert{
+    animation:redAlert .7s infinite alternate;
+}
+
+@keyframes redAlert{
+    from{
+        box-shadow:inset 0 0 0 rgba(255,0,0,0);
+    }
+    to{
+        box-shadow:inset 0 0 80px rgba(255,0,0,.35);
+    }
+}
+
+/* FLOATING GLOW */
+
+.dashboard::after{
+    content:"";
+    position:absolute;
+    width:300px;
+    height:300px
